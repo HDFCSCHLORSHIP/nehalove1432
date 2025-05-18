@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Forever Love 💖</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+      overflow-x: hidden;
+      color: #4b004f;
+    }
+
+    .section {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .active {
+      display: flex;
+    }
+
+    h1, h2 {
+      font-weight: bold;
+      color: #c80064;
+    }
+
+    .photo, .slideshow img {
+      width: 300px;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      animation: pulse 2s infinite;
+    }
+
+    .romantic-line {
+      font-size: 1.5rem;
+      margin: 20px 0;
+      color: white;
+      opacity: 0;
+      animation: fadeIn 2s ease-in-out 2s forwards;
+    }
+
+    .next-button {
+      padding: 12px 24px;
+      font-size: 1rem;
+      background-color: #ff6f91;
+      border: none;
+      border-radius: 25px;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      margin-top: 20px;
+    }
+
+    .next-button:hover {
+      background-color: #ff4b7d;
+      transform: scale(1.05);
+    }
+
+    .slideshow {
+      margin: 20px auto;
+      max-width: 300px;
+      overflow: hidden;
+    }
+
+    .letter, .things-i-love, .letter-box {
+      background: white;
+      padding: 20px;
+      margin: 30px auto;
+      max-width: 600px;
+      border-radius: 20px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      text-align: left;
+      color: #333;
+    }
+
+    .things-i-love ul {
+      list-style: "❤️ ";
+      padding-left: 1.2rem;
+      font-size: 1.05rem;
+    }
+
+    .hearts {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .hearts::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image: url('maxresdefault.jpg');
+      background-repeat: repeat;
+      animation: floatHearts 10s linear infinite;
+      opacity: 0.1;
+    }
+
+    .flower-container {
+      margin: 0 auto 30px;
+      position: relative;
+      width: 100px;
+      height: 150px;
+      animation: growFlower 5s ease-out forwards;
+    }
+
+    .stem {
+      width: 6px;
+      height: 100px;
+      background: green;
+      margin: 0 auto;
+      border-radius: 3px;
+    }
+
+    .flower {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .petal {
+      width: 40px;
+      height: 40px;
+      background: pink;
+      border-radius: 50%;
+      position: absolute;
+      opacity: 0;
+      animation: fadeIn 2s ease forwards;
+    }
+
+    .petal1 { top: -20px; left: 0; animation-delay: 2s; }
+    .petal2 { top: 0; left: -20px; animation-delay: 2.5s; }
+    .petal3 { top: 0; left: 20px; animation-delay: 3s; }
+    .petal4 { top: 20px; left: 0; animation-delay: 3.5s; }
+
+    @keyframes fadeIn { to { opacity: 1; } }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    @keyframes floatHearts {
+      from { background-position: 0 0; }
+      to { background-position: 0 -1000px; }
+    }
+    @keyframes growFlower {
+      from { transform: scaleY(0); }
+      to { transform: scaleY(1); }
+    }
+
+    .love-text {
+      font-size: 2.2rem;
+      color: #d1005b;
+      margin: 30px 0;
+      opacity: 0;
+      animation: fadeIn 3s ease-in-out 6s forwards;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ❤️ Background Hearts -->
+  <div class="hearts"></div>
+
+  <!-- 🎵 Two Audios -->
+  <audio id="audio1" autoplay loop>
+    <source src="romantic2.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="audio2" loop>
+    <source src="romantic3.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Section 1 -->
+  <div class="section active" id="section1">
+    <h1>The Moment We First Met 💑</h1>
+    <img src="WhatsApp Image 2025-05-17 at 1.32.16 PM (1).jpeg" alt="First Meet" class="photo" />
+    <p class="romantic-line">"From that moment, my heart knew it found home."</p>
+    <button class="next-button" onclick="showSection('section2')">Next 💌</button>
+  </div>
+
+  <!-- Section 2 -->
+  <div class="section" id="section2">
+    <h1>Our Beautiful Memories 📸</h1>
+    <div class="slideshow">
+      <img id="slideshow-image" src="hand.jpeg" alt="Memory"/>
+    </div>
+    <div class="letter">
+      <h2>My Love Letter to You betu 💌</h2>
+      <p>
+        My dearest Betu,<br/>
+        From the moment we met, my world changed forever. Your smile lights up my darkest days, 
+        and your laughter is my favorite melody. With you, every second feels like a dream. 
+        I promise to hold your hand through every storm and celebrate every joy. 
+        Thank you for being my everything. I love you more every single day betu. 💖
+      </p>
+    </div>
+    <div class="things-i-love">
+      <h2>10 Things I Love About You 💘</h2>
+      <ul>
+        <li>Your beautiful smile 😊</li>
+        <li>The way you care deeply ❤️</li>
+        <li>Your silly sense of humor 😂</li>
+        <li>The sparkle in your eyes ✨</li>
+        <li>Your kindness to everyone 🥺</li>
+        <li>Your voice, it soothes me 🎶</li>
+        <li>How you support me always 🤝</li>
+        <li>The way you look at me 😍</li>
+        <li>Your passion and dreams 💭</li>
+        <li>How you love me endlessly 💞</li>
+      </ul>
+    </div>
+    <button class="next-button" onclick="showSection('section3')">Next 🌸</button>
+  </div>
+
+  <!-- Section 3 -->
+  <div class="section" id="section3">
+    <h1 class="romantic-line">"My love for you grows every second..."</h1>
+    <div class="flower-container">
+      <div class="stem"></div>
+      <div class="flower">
+        <div class="petal petal1"></div>
+        <div class="petal petal2"></div>
+        <div class="petal petal3"></div>
+        <div class="petal petal4"></div>
+      </div>
+    </div>
+    <h2 class="love-text">I love you so much 💖</h2>
+    <div class="letter-box">
+      <p>
+        My sweetheart,<br/><br/>
+        Every page of my life became poetry the moment you entered it.  
+        Your love is the most beautiful feeling I've ever known.  
+        You make me better, stronger, and happier.  
+        With every heartbeat, I fall more in love with you Betu.<br/><br/>
+        Always yours betu,<br/>
+        ❤️
+      </p>
+    </div>
+  </div>
+
+  <script>
+    const audio1 = document.getElementById("audio1");
+    const audio2 = document.getElementById("audio2");
+
+    function playAudio(index) {
+      if (index === 1) {
+        audio2.pause();
+        audio1.play();
+      } else if (index === 2) {
+        audio1.pause();
+        audio2.play();
+      }
+    }
+
+    function showSection(id) {
+      document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+
+      if (id === "section1" || id === "section2") playAudio(1);
+      else if (id === "section3") playAudio(2);
+    }
+
+    // Slideshow logic
+    const photos = ["photo1.jpeg", "photo2.jpeg", "photo3.jpeg", "photo4.jpeg"];
+    let index = 0;
+    const img = document.getElementById("slideshow-image");
+    setInterval(() => {
+      if (img) {
+        index = (index + 1) % photos.length;
+        img.src = photos[index];
+      }
+    }, 3000);
+
+    // Mobile autoplay fix
+    document.addEventListener('click', () => {
+      if (audio1.paused && document.getElementById("section3").classList.contains("active") === false) {
+        audio1.play();
+      }
+      if (audio2.paused && document.getElementById("section3").classList.contains("active")) {
+        audio2.play();
+      }
+    });
+
+    // Auto move from section1 to section2 after 25 sec
+    setTimeout(() => {
+      if (document.getElementById("section1").classList.contains("active")) {
+        showSection("section2");
+      }
+    }, 25000);
+  </script>
+</body>
+</html>
